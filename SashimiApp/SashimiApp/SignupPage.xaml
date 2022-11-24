@@ -1,0 +1,55 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="SashimiApp.SignupPage"
+             xmlns:local="clr-namespace:SashimiApp" 
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design" 
+             Title="Đăng ký"
+             >
+    <ContentPage.Content>
+        <StackLayout BackgroundColor="White">
+                <Image Source="sashimi.png" WidthRequest="80" HeightRequest="80" Margin="0,20,0,0"/>
+            <Grid RowSpacing="5">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="50"/>
+                </Grid.RowDefinitions>
+                <Label Text="Thông tin đăng ký" HorizontalTextAlignment="Center" FontSize="27" FontAttributes="Bold" Grid.Row="0"/>
+                <local:CustomEntry x:Name="EntryName" Placeholder="Họ và tên" VerticalOptions="Center" Grid.Row="1" HeightRequest="51" Margin="24,0,24,12"/>
+                <local:CustomDatePicker Grid.Row="2" HeightRequest="51" Margin="24,0,24,12"/>
+                <local:CustomEntry  Placeholder="Email"  VerticalOptions="Center" Grid.Row="3" HeightRequest="51" Margin="24,0,24,12"/>
+                <!--<RelativeLayout Grid.Row="3">
+                    <Image Source="Icons.png" WidthRequest="24" HeightRequest="24" RelativeLayout.XConstraint="26" RelativeLayout.YConstraint="14.5"/>
+                </RelativeLayout>-->
+                <local:CustomEntry  x:Name="EntryPassword" Placeholder="Password" Grid.Row="4" VerticalOptions="Center" IsPassword="True" HeightRequest="51" Margin="24,0,24,12"/>
+                <!--<RelativeLayout Grid.Row="4">
+                    <Image Source="lock.png" WidthRequest="24" HeightRequest="24" RelativeLayout.XConstraint="25" RelativeLayout.YConstraint="14.5"/>
+                </RelativeLayout>
+                <RelativeLayout Grid.Row="4">
+                    <Image Source="showIcon.png" x:Name="showPwIcon" WidthRequest="24" HeightRequest="24" RelativeLayout.XConstraint="350" RelativeLayout.YConstraint="14.5">
+                        <Image.GestureRecognizers>
+                            <TapGestureRecognizer
+                                Tapped="PasswordIcon_Clicked"
+                                NumberOfTapsRequired="1">
+                            </TapGestureRecognizer>
+                        </Image.GestureRecognizers>
+                    </Image>
+                </RelativeLayout>-->
+                <local:CustomEntry  x:Name="EntryConfirmPassword" Placeholder="Confirm password" Grid.Row="5" VerticalOptions="Center" IsPassword="True" HeightRequest="51" Margin="24,0,24,12"/>
+                <!--<RelativeLayout Grid.Row="5">
+                    <Image Source="lock.png" WidthRequest="24" HeightRequest="24" RelativeLayout.XConstraint="25" RelativeLayout.YConstraint="14.5" />
+                </RelativeLayout >
+                <RelativeLayout Grid.Row="5">
+                    <Image Source="showIcon.png" x:Name="showConfPwIcon" WidthRequest="24" HeightRequest="24" RelativeLayout.XConstraint="350" RelativeLayout.YConstraint="14.5">
+                        <Image.GestureRecognizers>
+                            <TapGestureRecognizer
+                                Tapped="PasswordIcon_Clicked"
+                                NumberOfTapsRequired="1">
+                            </TapGestureRecognizer>
+                        </Image.GestureRecognizers>
+                    </Image>
+                </RelativeLayout>-->
+                <Button Text="Đăng ký" StyleId="btnLogin" WidthRequest="50" HeightRequest="51" FontSize="18" FontAttributes="Bold" BackgroundColor="#F41968" TextColor="White" CornerRadius="8" Margin="16,0,16,0" Grid.Row="6"/>
+            </Grid>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

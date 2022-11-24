@@ -1,24 +1,36 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="SashimiApp.MainPage">
-
-    <StackLayout>
-        <Frame BackgroundColor="#2196F3" Padding="24" CornerRadius="0">
-            <Label Text="Welcome to Xamarin.Forms!" HorizontalTextAlignment="Center" TextColor="White" FontSize="36"/>
-        </Frame>
-        <Label Text="Start developing now" FontSize="Title" Padding="30,10,30,10"/>
-        <Label Text="Make changes to your XAML file and save to see your UI update in the running app with XAML Hot Reload. Give it a try!" FontSize="16" Padding="30,0,30,0"/>
-        <Label FontSize="16" Padding="30,24,30,0">
-            <Label.FormattedText>
-                <FormattedString>
-                    <FormattedString.Spans>
-                        <Span Text="Learn more at "/>
-                        <Span Text="https://aka.ms/xamarin-quickstart" FontAttributes="Bold"/>
-                    </FormattedString.Spans>
-                </FormattedString>
-            </Label.FormattedText>
-        </Label>
+             x:Class="SashimiApp.MainPage"
+             xmlns:local ="clr-namespace:SashimiApp" 
+             Title="Đăng nhập"
+            >
+    <StackLayout BackgroundColor="White">
+        <Image Source="sashimi.png" WidthRequest="80" HeightRequest="80" Margin="0,25,0,0"/>
+        <Grid RowSpacing="25">
+            <Label Text="Sashimi xin chào!" HorizontalTextAlignment="Center" FontSize="27" FontAttributes="Bold" Grid.Row="0"/>
+             <local:CustomEntry x:Name="EntryEmail" StyleClass="inputForm" Placeholder="Email"  FontSize="18" TextColor="#554d56" HeightRequest="51" Margin="16,0,16,0" Grid.Row="1" />
+            <!--<RelativeLayout Grid.Row="1">
+                <Image Source="Icons.png" WidthRequest="24" HeightRequest="24" RelativeLayout.XConstraint="20" RelativeLayout.YConstraint="14.5"/>
+            </RelativeLayout>-->
+            <local:CustomEntry x:Name="EntryPassword" IsPassword="True" StyleClass="inputForm" Placeholder="Password" FontSize="18" TextColor="#554d56" HeightRequest="51" Margin="16,0,16,0" Grid.Row="2" />
+            <!--<RelativeLayout Grid.Row="2">
+                <Image Source="lock.png" WidthRequest="24" HeightRequest="24" RelativeLayout.XConstraint="20" RelativeLayout.YConstraint="14.5"/>
+            </RelativeLayout>-->
+            <RelativeLayout Padding="16" Grid.Row="3">
+                <CheckBox Color="Black" IsChecked="False" x:Name="Checkbox" Margin="16,8,0,0" CheckedChanged="ShowPassword"/>
+                <Label Text="Xem mật khẩu" TextColor="Black" FontSize="16" RelativeLayout.XConstraint="50" RelativeLayout.YConstraint="12" />
+                <Button x:Name="ForgotPwBtn" Text="Quên mật khẩu" TextColor="Black"  FontSize="15" BackgroundColor="Transparent" 
+                            RelativeLayout.XConstraint="240" RelativeLayout.YConstraint="0" />
+            </RelativeLayout>
+            <Button Text="Đăng nhập" StyleId="btnLogin" WidthRequest="50" HeightRequest="51" FontSize="18" FontAttributes="Bold" BackgroundColor="#F41968" TextColor="White" CornerRadius="8" Margin="16,0,16,0" Grid.Row="4"/>
+                <FlexLayout Direction="Row" AlignItems="Center"
+                JustifyContent="Center" Grid.Row="5">
+                    <Label Text="Bạn chưa có tài khoản?" FontSize="13" />
+                    <Button x:Name="SignupBtn" Clicked="NavigateToSignup" Text="Đăng kí ngay" TextColor="#419bf9"  FontSize="13" BackgroundColor="Transparent" FontAttributes="None"/>
+                </FlexLayout>
+        </Grid>
     </StackLayout>
 
 </ContentPage>
+    
