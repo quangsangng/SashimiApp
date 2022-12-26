@@ -1,0 +1,24 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<TabbedPage xmlns="http://xamarin.com/schemas/2014/forms"
+            xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+            xmlns:d="http://xamarin.com/schemas/2014/forms/design" 
+            xmlns:local="clr-namespace:SashimiApp.Views"
+            xmlns:android ="clr-namespace:Xamarin.Forms.PlatformConfiguration.AndroidSpecific;assembly=Xamarin.Forms.Core"
+            android:TabbedPage.ToolbarPlacement="Bottom"
+            android:TabbedPage.BarItemColor="#FFFFFFF"
+            android:TabbedPage.BarSelectedItemColor="White"
+            x:Class="SashimiApp.Views.HomePage"
+            NavigationPage.HasNavigationBar="True"
+            NavigationPage.HasBackButton="False"
+            NavigationPage.IconColor="#FFFFFF"
+            NavigationPage.TitleIconImageSource="sashimi_mini"
+            BarBackgroundColor="#646AFF"
+            Title="Sashimi">
+    <TabbedPage.ToolbarItems>
+        <ToolbarItem IconImageSource="notification"/>
+    </TabbedPage.ToolbarItems>
+    
+    <local:PlaygroundPage Title="Luyện tập" IconImageSource="playlist"/>
+    <local:LibraryPage Title="Thư viện" IconImageSource="open_book"/>
+    
+</TabbedPage>

@@ -15,6 +15,8 @@ using SashimiApp;
 using Xamarin.Forms;
 using Xamarin.Forms.Platform.Android;
 using CustomRenderer.Droid;
+using SashimiApp.Custom;
+
 
 [assembly: ExportRenderer(typeof(CustomEntry), typeof(CustomEntryRenderer))]
 namespace CustomRenderer.Droid

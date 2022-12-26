@@ -1,0 +1,90 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="SashimiApp.Views.LoginPage"
+             xmlns:local ="clr-namespace:SashimiApp.Custom" 
+             Title="Đăng nhập">
+    
+    <StackLayout BackgroundColor="White">
+        <Image Source="sashimi.png" WidthRequest="80" HeightRequest="80" Margin="0,25,0,0"/>
+        <Grid RowSpacing="25">
+            <Label 
+                Text = "Sashimi xin chào !"
+                HorizontalTextAlignment="Center" 
+                FontSize="27" 
+                FontAttributes="Bold" 
+                Grid.Row="0"/>
+            <local:CustomEntry 
+                x:Name="entryEmail" 
+                StyleClass="inputForm" 
+                Placeholder="Email"  
+                FontSize="18" 
+                TextColor="#554d56" 
+                HeightRequest="51" 
+                Margin="16,0,16,0" 
+                Grid.Row="1" />
+            <local:CustomEntry 
+                x:Name="entryPassword" 
+                IsPassword="True" 
+                StyleClass="inputForm" 
+                Placeholder="Password" 
+                FontSize="18" 
+                TextColor="#554d56" 
+                HeightRequest="51" 
+                Margin="16,0,16,0" 
+                Grid.Row="2" />
+            <RelativeLayout Padding="16" Grid.Row="3">
+                <CheckBox 
+                    Color="Black" 
+                    IsChecked="False"
+                    x:Name="Checkbox" 
+                    Margin="16,8,0,0" 
+                    CheckedChanged="ShowPassword"/>
+                <Label 
+                    Text="Xem mật khẩu" 
+                    TextColor="Black" 
+                    FontSize="16" 
+                    RelativeLayout.XConstraint="50" 
+                    RelativeLayout.YConstraint="12" />
+                <Button 
+                    x:Name="ForgotPwBtn" 
+                    Text="Quên mật khẩu" 
+                    TextColor="Black"  
+                    FontSize="15" 
+                    BackgroundColor="Transparent" 
+                    RelativeLayout.XConstraint="240" 
+                    RelativeLayout.YConstraint="0" />
+            </RelativeLayout>
+            <Button 
+                Text="Đăng nhập"
+                Clicked="NavigateToHomePage"
+                StyleId="btnLogin" 
+                WidthRequest="50" 
+                HeightRequest="51" 
+                FontSize="18" 
+                FontAttributes="Bold" 
+                BackgroundColor="#F41968" 
+                TextColor="White" 
+                CornerRadius="8" 
+                Margin="16,0,16,0" 
+                Grid.Row="4"/>
+            <FlexLayout 
+                Direction="Row" 
+                AlignItems="Center"
+                JustifyContent="Center" 
+                Grid.Row="5">
+                    <Label Text="Bạn chưa có tài khoản?" 
+                           FontSize="13" />
+                    <Button x:Name="SignupBtn" 
+                            Clicked="NavigateToSignup" 
+                            Text="Đăng kí ngay" 
+                            TextColor="#419bf9"  
+                            FontSize="13" 
+                            BackgroundColor="Transparent" 
+                            FontAttributes="None"/>
+            </FlexLayout>
+        </Grid>
+    </StackLayout>
+
+</ContentPage>
+    

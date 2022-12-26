@@ -6,11 +6,13 @@ using System.Text;
 using System.Threading.Tasks;
 using Xamarin.Forms;
 
-namespace SashimiApp
+
+
+namespace SashimiApp.Views
 {
-    public partial class MainPage : ContentPage
+    public partial class LoginPage : ContentPage
     {
-        public MainPage()
+        public LoginPage()
         {
             InitializeComponent();
         }
@@ -19,12 +21,12 @@ namespace SashimiApp
         {
             if (showPassword)
             {
-                EntryPassword.IsPassword = false;
+                entryPassword.IsPassword = false;
                 showPassword = false;
             }
             else
             {
-                EntryPassword.IsPassword = true;
+                entryPassword.IsPassword = true;
                 showPassword = true;
             }
         }
@@ -32,5 +34,11 @@ namespace SashimiApp
         {
             await Navigation.PushAsync(new SignupPage());
         }
+
+        private async void NavigateToHomePage(object sender, EventArgs e)
+        {
+            await Navigation.PushAsync(new HomePage());
+        }
+
     }
 }

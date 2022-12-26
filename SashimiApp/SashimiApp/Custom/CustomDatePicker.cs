@@ -3,9 +3,9 @@ using System.Collections.Generic;
 using System.Text;
 using Xamarin.Forms;
 
-namespace SashimiApp
+namespace SashimiApp.Custom
 {
-    public class CustomEntry:Entry
+    public class CustomDatePicker : DatePicker
     {
     }
 }

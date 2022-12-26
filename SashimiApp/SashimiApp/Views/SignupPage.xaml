@@ -1,0 +1,72 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="SashimiApp.Views.SignupPage"
+             xmlns:local ="clr-namespace:SashimiApp.Custom" 
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design" 
+             Title="Đăng ký"
+             >
+    <ContentPage.Content>
+        <StackLayout BackgroundColor="White">
+                <Image Source="sashimi.png" WidthRequest="80" HeightRequest="80" Margin="0,20,0,0"/>
+            <Grid RowSpacing="5">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="50"/>
+                </Grid.RowDefinitions>
+                <Label 
+                    Text="Thông tin đăng ký" 
+                    HorizontalTextAlignment="Center" 
+                    FontSize="27" 
+                    FontAttributes="Bold" 
+                    Grid.Row="0"/>
+                <local:CustomEntry 
+                    x:Name="entryName" 
+                    Placeholder="Họ và tên" 
+                    VerticalOptions="Center" 
+                    Grid.Row="1" 
+                    HeightRequest="51" 
+                    Margin="24,0,24,12"/>
+                <local:CustomDatePicker
+                    x:Name="dpDateOfBirth"
+                    Grid.Row="2" 
+                    HeightRequest="51" 
+                    Margin="24,0,24,12"/>
+                <local:CustomEntry  
+                    x:Name="entryEmail"
+                    Placeholder="Email"  
+                    VerticalOptions="Center" 
+                    Grid.Row="3" 
+                    HeightRequest="51" 
+                    Margin="24,0,24,12"/>
+                <local:CustomEntry  
+                    x:Name="entryPassword" 
+                    Placeholder="Password" 
+                    Grid.Row="4" 
+                    VerticalOptions="Center" 
+                    IsPassword="True" 
+                    HeightRequest="51" 
+                    Margin="24,0,24,12"/>
+                <local:CustomEntry  
+                    x:Name="entryConfirmPassword" 
+                    Placeholder="Confirm password" 
+                    Grid.Row="5" VerticalOptions="Center" 
+                    IsPassword="True" HeightRequest="51" 
+                    Margin="24,0,24,12"/>
+                <Button 
+                    Text="Đăng ký"
+                    x:Name="btnSignup"
+                    Clicked="btnSignup_Clicked"
+                    StyleId="btnSignup" 
+                    WidthRequest="50" 
+                    HeightRequest="51" 
+                    FontSize="18" 
+                    FontAttributes="Bold" 
+                    BackgroundColor="#F41968" 
+                    TextColor="White" 
+                    CornerRadius="8" 
+                    Margin="16,0,16,0" 
+                    Grid.Row="6"/>
+            </Grid>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>
