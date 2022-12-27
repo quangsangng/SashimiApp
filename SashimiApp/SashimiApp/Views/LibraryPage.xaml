@@ -2,14 +2,47 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="SashimiApp.Views.LibraryPage">
-    <ListView x:Name="a"
-            ItemsSource="{Binding Items}"
-            ItemTapped="Handle_ItemTapped"
-            CachingStrategy="RecycleElement">
-        <ListView.ItemTemplate>
-            <DataTemplate>
-                <TextCell Text="{Binding .}" />
-            </DataTemplate>
-        </ListView.ItemTemplate>
-    </ListView>
+    <ContentPage.Content>
+        <StackLayout>
+            <SearchBar 
+                Placeholder="Tìm từ vựng" 
+                TextChanged="SearchLibraryItem" 
+                Background="black"/>
+            
+            <ListView x:Name="listOfLibrary"
+                    ItemTapped="Handle_ItemTapped"
+                    CachingStrategy="RecycleElement"
+                    HasUnevenRows="True">
+
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell>
+                            <Grid Padding="5,5" Background="#FFF">
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="40"/>
+                                    <ColumnDefinition Width="Auto"/>
+                                </Grid.ColumnDefinitions>
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="Auto"/>
+                                    <RowDefinition Height="Auto"/>
+                                    <RowDefinition Height="Auto"/>
+                                </Grid.RowDefinitions>
+                                <Label Text = "{Binding Content}"
+                                       FontSize="Large"
+                                       Grid.Column="0" 
+                                       Grid.Row= "0" 
+                                       Grid.RowSpan="3" 
+                                       BackgroundColor="AntiqueWhite"
+                                       HorizontalTextAlignment="Center"
+                                       VerticalTextAlignment="Center"/>
+                                <Label Text="{Binding Explain}" Grid.Column="1" Grid.Row="0"/>
+                                <Label Text="{Binding Example_1}" Grid.Column="1" Grid.Row="1"/>
+                                <Label Text="{Binding Example_2}" Grid.Column="1" Grid.Row="2"/>
+                            </Grid>
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+        </StackLayout>
+    </ContentPage.Content>
 </ContentPage>
