@@ -15,7 +15,7 @@
                 </Grid.RowDefinitions>
                 <Label Text="Thông tin đăng ký" HorizontalTextAlignment="Center" FontSize="27" FontAttributes="Bold" Grid.Row="0"/>
                 <local:CustomEntry x:Name="EntryName" Placeholder="Họ và tên" VerticalOptions="Center" Grid.Row="1" HeightRequest="51" Margin="24,0,24,12"/>
-                <local:CustomDatePicker Grid.Row="2" HeightRequest="51" Margin="24,0,24,12"/>
+                <local:CustomDatePicker Grid.Row="2" HeightRequest="51" Margin="24,0,24,12" TextColor="#554d56"/>
                 <local:CustomEntry  Placeholder="Email"  VerticalOptions="Center" Grid.Row="3" HeightRequest="51" Margin="24,0,24,12"/>
                 <!--<RelativeLayout Grid.Row="3">
                     <Image Source="Icons.png" WidthRequest="24" HeightRequest="24" RelativeLayout.XConstraint="26" RelativeLayout.YConstraint="14.5"/>

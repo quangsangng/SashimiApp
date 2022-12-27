@@ -28,13 +28,14 @@ namespace SashimiApp.Droid
 
             if(Control != null)
             {
-                Control.Text = "Ngày sinh";
+                Control.Text = "Chọn ngày sinh";
                 GradientStrokeDrawable gradientDrawable = new GradientStrokeDrawable();
                 gradientDrawable.SetCornerRadius(10);
                 gradientDrawable.SetStroke(2, Android.Graphics.Color.Rgb(210, 210, 210));
                 gradientDrawable.SetColor(Android.Graphics.Color.Rgb(245, 245, 245));
                 Control.SetBackground(gradientDrawable);
                 Control.SetPadding(57, 12, 0, 12);
+                
             }
         }
     }
