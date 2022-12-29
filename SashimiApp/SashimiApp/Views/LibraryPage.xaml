@@ -1,10 +1,54 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:fontAwesome ="clr-namespace:Sashimi.Helpers.FontAwesome"
              x:Class="SashimiApp.Views.LibraryPage">
     <ContentPage.Content>
         <StackLayout>
+            <Grid HeightRequest="60" Padding="2" Margin="0,5,0,0">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="*"/>
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+                <Button 
+                    Text="Đã thuộc"
+                    BackgroundColor="#ADE792"
+                    FontSize="10"
+                    Grid.Column="0"
+                    Grid.Row="0"
+                    />
+                <Button 
+                    Text="Chưa thuộc"
+                    BackgroundColor="#FF8787"
+                    FontSize="10"
+                    Grid.Column="1"
+                    Grid.Row="0"
+                    />
+                <Button 
+                    Text="{x:Static fontAwesome:FontAwesomeIcons.Rotate}"
+                    BackgroundColor="#B7C4CF"
+                    FontFamily="FAFS"
+                    Grid.Column="2"
+                    TextColor="#000"
+                    Grid.Row="0"
+                    />
+                <Button 
+                    Text="{x:Static fontAwesome:FontAwesomeIcons.Plus}" 
+                    Clicked="NavigateToAddLibraryPage"
+                    BackgroundColor="#B7C4CF"
+                    FontFamily="FAFS"
+                    Grid.Column="3"
+                    Grid.Row="0"
+                    />
+            </Grid>
+            
             <SearchBar 
+                Margin="0"
                 Placeholder="Tìm từ vựng" 
                 TextChanged="SearchLibraryItem" 
                 Background="black"/>

@@ -61,5 +61,10 @@ namespace SashimiApp.Views
         {
             listOfLibrary.ItemsSource = Items.Where(item => item.Content.StartsWith(e.NewTextValue));
         }
+
+        private async void NavigateToAddLibraryPage(object sender, EventArgs e)
+        {
+            await Navigation.PushAsync(new AddLibraryItemPage());
+        }
     }
 }

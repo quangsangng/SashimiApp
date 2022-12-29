@@ -28,6 +28,7 @@
                     Margin="24,0,24,12"/>
                 <local:CustomDatePicker
                     x:Name="dpDateOfBirth"
+                    Format="d"
                     Grid.Row="2" 
                     HeightRequest="51" 
                     Margin="24,0,24,12"/>

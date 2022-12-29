@@ -10,16 +10,16 @@ using Xamarin.Forms.Xaml;
 namespace SashimiApp.Views
 {
     [XamlCompilation(XamlCompilationOptions.Compile)]
-    public partial class HomePage : TabbedPage
+    public partial class MenuPage : ContentPage
     {
-        public HomePage()
+        public MenuPage()
         {
             InitializeComponent();
         }
-
-        private async void NavigateToMenuPage(object sender, EventArgs e)
+        private async void NavigateToLoginPage(object sender, EventArgs e)
         {
-            await Navigation.PushAsync(new MenuPage());
+            await Navigation.PushAsync(new LoginPage());
         }
+
     }
 }

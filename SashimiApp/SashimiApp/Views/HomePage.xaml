@@ -4,6 +4,7 @@
             xmlns:d="http://xamarin.com/schemas/2014/forms/design" 
             xmlns:local="clr-namespace:SashimiApp.Views"
             xmlns:android ="clr-namespace:Xamarin.Forms.PlatformConfiguration.AndroidSpecific;assembly=Xamarin.Forms.Core"
+            xmlns:fontAwesome ="clr-namespace:Sashimi.Helpers.FontAwesome"
             android:TabbedPage.ToolbarPlacement="Bottom"
             android:TabbedPage.BarItemColor="#CCC"
             android:TabbedPage.BarSelectedItemColor="White"
@@ -15,13 +16,21 @@
             BarBackgroundColor="#646AFF"
             BackgroundColor="#FFF"
             >
-
+    
     <NavigationPage.TitleView>
         <AbsoluteLayout VerticalOptions="CenterAndExpand">
-            <Image Source="menu" AbsoluteLayout.LayoutFlags="PositionProportional" AbsoluteLayout.LayoutBounds="0, 0,30, 30"/>
-            <!--<Image Source="notification" HeightRequest="5"/>-->
+            <Button
+                Text="{x:Static fontAwesome:FontAwesomeIcons.Bars}" FontSize="Large" FontFamily="FAFS"
+                Clicked="NavigateToMenuPage"
+                AbsoluteLayout.LayoutFlags="PositionProportional" 
+                AbsoluteLayout.LayoutBounds="0, 0,60,50"
+                TextColor="#FFF"
+                BackgroundColor="Transparent"
+                >
+            </Button>
         </AbsoluteLayout>
     </NavigationPage.TitleView>
+    
     
     
     <local:PlaygroundPage Title="Luyện tập" IconImageSource="playlist"/>
