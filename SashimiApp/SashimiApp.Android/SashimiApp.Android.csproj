@@ -93,12 +93,6 @@
     <Folder Include="Resources\drawable\" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\SashimiApp\SashimiApp.csproj">
-      <Project>{911A7484-EB8A-4FD6-8685-FF6C6840C495}</Project>
-      <Name>SashimiApp</Name>
-    </ProjectReference>
-  </ItemGroup>
-  <ItemGroup>
     <AndroidResource Include="Resources\drawable-ldpi\sashimi.png" />
   </ItemGroup>
   <ItemGroup>
@@ -130,6 +124,24 @@
   </ItemGroup>
   <ItemGroup>
     <AndroidResource Include="Resources\drawable-ldpi\menu.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\drawable-ldpi\user.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\drawable-ldpi\light.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\drawable-ldpi\books.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\SashimiApp\SashimiApp.csproj">
+      <Project>{621186e3-443c-418d-b7f4-da0a93011120}</Project>
+      <Name>SashimiApp</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\drawable-ldpi\account.png" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\Android\Xamarin.Android.CSharp.targets" />
 </Project>

@@ -35,5 +35,5 @@
     
     <local:PlaygroundPage Title="Luyện tập" IconImageSource="playlist"/>
     <local:LibraryPage Title="Thư viện" IconImageSource="open_book"/>
-    
+    <local:Account Title="Tài khoản" IconImageSource="account"/>
 </TabbedPage>

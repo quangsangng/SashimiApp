@@ -1,0 +1,68 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:xct="http://xamarin.com/schemas/2020/toolkit"
+             xmlns:controls="clr-namespace:SashimiApp.Controls"
+             x:Class="SashimiApp.Views.Account">
+    <ContentPage.Content>
+        <ScrollView >
+            <StackLayout>
+                <controls:CardView 
+                               BorderColor="#F41968"
+                               CardTitle="Nguyen Quang Sang"
+                               CardDescription="nguyenquangsang@example.com"
+                               CardLevel ="N3"
+                               IconBackgroundColor="SlateGray"
+                               IconImageSource="user.png" 
+                               CardColor="White"
+                                   />
+                <FlexLayout>
+                    <controls:CardExam 
+                               BorderColor="DarkGray"
+                               CardTitle="20"
+                               CardDescription="Trắc nghiệm"
+                               CardTiming ="23m"
+                               CardColor="#ed7483"
+                                   />
+                    <controls:CardExam 
+                               BorderColor="DarkGray"
+                               CardTitle="15"
+                               CardDescription="Điền vào chỗ trống"
+                               CardTiming="15m"
+                               CardColor="#3a80f3"
+                              />
+                </FlexLayout>
+                <FlexLayout 
+                    Direction="Row"
+                    AlignItems="Center"
+                    JustifyContent="SpaceBetween" 
+                    Margin="22, 28, 22, 10"
+                      >
+                    <Label Text="Bài học" TextColor="Black" FontSize="16"></Label>
+                    <Label Text="Xem thêm" TextColor="#518ef4" FontSize="16"></Label>
+                </FlexLayout>
+
+                <controls:CardLesson 
+                                     IconBackgroundColor="Transparent"
+                                     IconImageSource="books.png"
+                                     BorderColor="#3a80f3"
+                                     TextColor="#3a80f3"
+                                     CardTitle="Từ vựng"
+                                     CardDescription="89 từ đã học"
+                                     CardProcess ="50%"
+                                     CardColor="#e7f4fb"
+                 />
+                <controls:CardLesson 
+                                    IconBackgroundColor="Transparent"
+                                    IconImageSource="light.png"
+                                    CardTitle="Hán tự"
+                                    BorderColor="#ec7482"
+                                    TextColor ="#ec7482"
+                                    CardDescription="69 từ đã học"
+                                    CardProcess ="45%"
+                                    CardColor="#fdf1f2"
+                 />
+            </StackLayout>
+        </ScrollView>
+    </ContentPage.Content>
+</ContentPage>

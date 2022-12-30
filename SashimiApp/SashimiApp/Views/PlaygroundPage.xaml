@@ -5,7 +5,9 @@
              >
     <ContentPage.Content>
         <StackLayout>
-            <Label Text="Bạn chưa học được từ vựng nào hôm nay"
+            <Label 
+                x:Name="lb"
+                Text="Bạn chưa học được từ vựng nào hôm nay"
                 VerticalOptions="CenterAndExpand" 
                 HorizontalOptions="CenterAndExpand" />
         </StackLayout>

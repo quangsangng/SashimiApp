@@ -6,17 +6,15 @@ using System.Threading.Tasks;
 
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
-using Xamarin.Essentials;
 
 namespace SashimiApp.Views
 {
     [XamlCompilation(XamlCompilationOptions.Compile)]
-    public partial class PlaygroundPage : ContentPage
+    public partial class Account : ContentPage
     {
-        public PlaygroundPage()
+        public Account()
         {
             InitializeComponent();
-            lb.Text = Preferences.Get("email", "");
         }
     }
 }

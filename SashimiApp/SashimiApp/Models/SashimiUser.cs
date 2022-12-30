@@ -4,7 +4,7 @@ using System.Text;
 
 namespace SashimiApp.Models
 {
-    public class User
+    public class SashimiUser
     {
         /* 
         Một User gồm có

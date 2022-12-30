@@ -1,0 +1,72 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ContentView xmlns="http://xamarin.com/schemas/2014/forms" 
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             x:Name="this"
+             x:Class="SashimiApp.Controls.CardLesson">
+    <Frame BindingContext="{x:Reference this}"
+           BackgroundColor="{Binding CardColor}"
+           CornerRadius="5"
+           HasShadow="True"
+           Padding="8"
+           Margin="20, 7"
+           >
+        <FlexLayout AlignItems="Center" JustifyContent="SpaceBetween" Padding="8">
+            <Frame 
+                   BackgroundColor="{Binding IconBackgroundColor, FallbackValue='Blue'}"
+                   CornerRadius="18"
+                   HeightRequest="50"
+                   WidthRequest="50"
+                   HorizontalOptions="Center"
+                   HasShadow="False"
+                   VerticalOptions="Center"
+                   >
+            <Image Source="{Binding IconImageSource}"
+                       Margin="-20"
+                       WidthRequest="100"
+                       HeightRequest="100"
+                       Aspect="AspectFill" />
+    </Frame>
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="50" />
+                    <RowDefinition Height="Auto" />
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="Auto" />
+                </Grid.ColumnDefinitions>
+                <Label Grid.Column="1"
+                   Text="{Binding CardTitle, FallbackValue='Card Title'}"
+                   FontAttributes="Bold"
+                   FontSize="Large"
+                   VerticalTextAlignment="Center"
+                   HorizontalTextAlignment="Start" />
+            <Label Grid.Row="2"
+                   Grid.Column="1"
+                   Text="{Binding CardDescription, FallbackValue='Card description text.'}"
+                   VerticalTextAlignment="Start"
+                   VerticalOptions="Fill"
+                   HorizontalOptions="Fill" 
+                   FontSize="18"
+                  />
+            </Grid>
+            <Frame 
+                   BackgroundColor="{Binding IconBackgroundColor, FallbackValue='Blue'}"
+                   BorderColor="{Binding BorderColor, FallbackValue='Black'}"
+                   CornerRadius="50"
+                   HeightRequest="30"
+                   WidthRequest="30"
+                   HorizontalOptions="Center"
+                   HasShadow="False"
+                   VerticalOptions="Center"
+                   >
+                <Label Text="{Binding CardProcess, FallbackValue='Process'}" 
+                       VerticalTextAlignment="Center"
+                   HorizontalTextAlignment="Center" FontSize="15" TextColor="{Binding TextColor, FallbackValue='Black'}"></Label>
+            </Frame>
+
+        </FlexLayout>
+    </Frame>
+</ContentView>

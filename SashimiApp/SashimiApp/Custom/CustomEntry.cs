@@ -5,7 +5,7 @@ using Xamarin.Forms;
 
 namespace SashimiApp.Custom
 {
-    public class CustomEntry:Entry
+    public class CustomEntry : Entry
     {
 
     }

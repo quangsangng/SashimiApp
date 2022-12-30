@@ -1,0 +1,65 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ContentView xmlns="http://xamarin.com/schemas/2014/forms" 
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             x:Name="this"
+             x:Class="SashimiApp.Controls.CardExam">
+    <Frame BindingContext="{x:Reference this}"
+           BackgroundColor="{Binding CardColor}"
+           BorderColor="{Binding BorderColor}"
+           CornerRadius="5"
+           HasShadow="True"
+           Padding="8"
+           Margin="15, 0, 0, 0"
+           >
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="75" />
+                <RowDefinition Height="4" />
+                <RowDefinition Height="Auto" />
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="75" />
+                <ColumnDefinition Width="85" />
+            </Grid.ColumnDefinitions>
+            <Frame IsClippedToBounds="True"
+                   CornerRadius="15"
+                   HeightRequest="25"
+                   WidthRequest="55"
+                   >
+                <Label Text="{Binding CardTitle, FallbackValue='Points'}" VerticalTextAlignment="Center"
+                   HorizontalTextAlignment="Center" FontSize="22"></Label>
+            </Frame>
+            <Label Grid.Column="1"
+                   Text="points"
+                   TextColor="White"
+                   FontAttributes="Bold"
+                   FontSize="20"
+                   VerticalTextAlignment="Center"
+                   HorizontalTextAlignment="Start" />
+            <Label Grid.Row="2"
+                   Grid.ColumnSpan="2"
+                   Text="{Binding CardDescription, FallbackValue='Card description text.'}"
+                   VerticalTextAlignment="Start"
+                   VerticalOptions="Fill"
+                   HorizontalOptions="Fill" 
+                   FontSize="18"
+                   TextColor="White"/>
+            <Label Grid.Row="3"
+                    Grid.ColumnSpan="1"
+                   Text="Thời gian: "
+                   VerticalTextAlignment="Start"
+                   VerticalOptions="Fill"
+                   HorizontalOptions="Fill" TextColor="White"/>
+            <Label Grid.Row="3"
+                   Grid.Column="1"
+                   Text="{Binding CardTiming, FallbackValue='Level'}"
+                   VerticalTextAlignment="Start"
+                   VerticalOptions="Fill"
+                   HorizontalOptions="Fill" TextColor="White"/>
+
+        </Grid>
+    </Frame>
+</ContentView>

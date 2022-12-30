@@ -6,6 +6,8 @@ using System.Threading.Tasks;
 using SashimiApp.Models;
 using System.Linq;
 using Newtonsoft.Json;
+using Xamarin.Essentials;
+
 
 namespace SashimiApp.Repository
 {
@@ -16,7 +18,8 @@ namespace SashimiApp.Repository
 
         public async Task<bool> SaveItem(LibraryItem item)
         {
-            var data = await firebaseClient.Child("sang@gmail/Library").PostAsync(JsonConvert.SerializeObject(item));
+            string email = Preferences.Get("email", "").Replace(".", "_");
+            var data = await firebaseClient.Child(email + "/Library").PostAsync(JsonConvert.SerializeObject(item));
             if (! String.IsNullOrEmpty(data.Key))
             {
                 return true;
@@ -29,7 +32,8 @@ namespace SashimiApp.Repository
 
         public async Task<List<LibraryItem>> GetLibraryItems()
         {
-            return (await firebaseClient.Child("sang@gmail.com").OnceAsync<LibraryItem>()).Select(item => new LibraryItem
+            string email = Preferences.Get("email", "").Replace(".", "_"); ;
+            return (await firebaseClient.Child(email + "/Library").OnceAsync<LibraryItem>()).Select(item => new LibraryItem
             {
                 Content = item.Object.Content,
                 Explain = item.Object.Explain,

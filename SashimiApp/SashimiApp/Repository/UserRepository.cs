@@ -6,6 +6,7 @@ using Firebase.Auth;
 using Firebase.Database;
 using Newtonsoft.Json;
 using SashimiApp.Models;
+using Xamarin.Essentials;
 
 namespace SashimiApp.Repository
 {
@@ -22,7 +23,7 @@ namespace SashimiApp.Repository
         }
 
 
-        public async Task<bool> SaveUserInfor(Models.User user)
+        public async Task<bool> SaveUserInfor(SashimiUser user)
         {
             string clean_email = user.Email.Replace('.', '_'); // sang@gmail.com -> sang@gmail_com
             var data = await firebaseClient.Child(clean_email + "/UserInfo").PostAsync(JsonConvert.SerializeObject(user));
@@ -43,7 +44,7 @@ namespace SashimiApp.Repository
 
         public async Task<bool>Register(string email, string name, string birth, string password)
         {
-            Models.User user = new Models.User();
+            SashimiUser user = new SashimiUser();
             user.Email = email;
             user.Name = name;
             user.Birth = birth;
@@ -51,10 +52,22 @@ namespace SashimiApp.Repository
             var token = await authProvider.CreateUserWithEmailAndPasswordAsync(email, password, name);
             if (!String.IsNullOrEmpty(token.FirebaseToken))
             {
-                SaveUserInfor(user);
+                await SaveUserInfor(user);
                 return true;
             }
             return false;
+        }
+
+        public async Task<string>Login(string email, string password)
+        {
+            var token = await authProvider.SignInWithEmailAndPasswordAsync(email, password);
+            if (!String.IsNullOrEmpty(token.FirebaseToken))
+            {
+                Preferences.Set("email", email);
+                return token.FirebaseToken;
+                
+            }
+            return "";
         }
 
     }
