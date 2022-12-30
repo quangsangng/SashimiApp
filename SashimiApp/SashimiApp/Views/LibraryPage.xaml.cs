@@ -48,20 +48,30 @@ namespace SashimiApp.Views
         }
 
         private async void renderLibraryElements()
-        {
-            listOfLibrary.ItemsSource = await libraryItemRepository.GetLibraryItems();
+        { 
+            Items = await libraryItemRepository.GetLibraryItems();
+            listOfLibrary.ItemsSource = Items;
         }
 
-        async void Handle_ItemTapped(object sender, SelectedItemChangedEventArgs e)
+        async void Handle_ItemTapped(object sender, ItemTappedEventArgs e)
         {
-            var itemSelected = e.SelectedItem as LibraryItem;
-            await DisplayAlert(itemSelected.Content,
-                 "Nghĩa:" + itemSelected.Explain + "\n\n" +
-                 "Ví dụ: " + itemSelected.Example_1 + "\n\n" +
-                 "Giải nghĩa: " +itemSelected.Example_2 
-                , "Đóng");
+            //var itemSelected = e.SelectedItem as LibraryItem;
+            if (e.Item == null)
+            {
+                return;
+            }
+            else
+            {
+                var item = e.Item as LibraryItem;
+                await DisplayAlert(item.Content,
+                                     "Nghĩa:" + item.Explain + "\n\n" +
+                                     "Ví dụ: " + item.Example_1 + "\n\n" +
+                                     "Giải nghĩa: " + item.Example_2
+                                    , "Đóng");
+            }
 
-            ((ListView)sender).SelectedItem = null;
+
+            //((ListView)sender).SelectedItem = null;
         }
 
         
@@ -77,8 +87,35 @@ namespace SashimiApp.Views
 
         private async void ReloadLibraryItems(object sender, EventArgs e)
         {
-
             renderLibraryElements();
+        }
+
+        private void EditLibraryItem(object sender, EventArgs e)
+        {
+            var menuItem = sender as MenuItem;
+            var libraryItem = menuItem.CommandParameter as LibraryItem;
+            Navigation.PushAsync(new AddLibraryItemPage(libraryItem));
+        }
+
+        private async void DeleteLibraryItem(object sender, EventArgs e)
+        {
+            var menuItem = sender as MenuItem;
+            var libraryItem = menuItem.CommandParameter as LibraryItem;
+            var response = await DisplayAlert("Xác nhận", "Bạn có muốn xóa " + libraryItem.Content + " ra khỏi thư viện ?", "Vâng", "Không");
+            if (response)
+            {
+                try
+                {
+                    await libraryItemRepository.DeleteItem(libraryItem.Content);
+                }
+                catch
+                {
+                    await DisplayAlert("Lỗi", "Xóa thất bại", "Đóng");
+                }
+                // Render lại item sau khi xóa
+                renderLibraryElements();
+            }
+            
         }
     }
 }

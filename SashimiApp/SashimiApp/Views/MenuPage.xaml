@@ -5,7 +5,6 @@
              >
     <ContentPage.Content>
         <StackLayout Orientation="Vertical" VerticalOptions="Start" Spacing="0" Margin="0,5,0,0">
-            <Button Text="Tài khoản" VerticalOptions="CenterAndExpand"/>
             <Button Text="Thông tin ứng dụng" VerticalOptions="CenterAndExpand"/>
             <Button Text="Đăng xuất"
                     Clicked="NavigateToLoginPage"

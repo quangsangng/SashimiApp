@@ -19,8 +19,19 @@ namespace SashimiApp.Views
 
         public AddLibraryItemPage()
         {
+            // Hiển thị khi thực hiện thêm mới item
             InitializeComponent();
             
+        }
+
+        public AddLibraryItemPage(LibraryItem libraryItem)
+        {
+            // Hiển thị khi thực hiện sửa item
+            InitializeComponent();
+            entryContent.Text = libraryItem.Content;
+            entryExplain.Text = libraryItem.Explain;
+            entryExample_1.Text = libraryItem.Example_1;
+            entryExample_2.Text = libraryItem.Example_2;
         }
 
         private async void SubmitLibraryItem(object sender, EventArgs e)

@@ -19,12 +19,27 @@ namespace SashimiApp.Repository
         public async Task<bool> SaveItem(LibraryItem item)
         {
             string email = Preferences.Get("email", "").Replace(".", "_");
-            var data = await firebaseClient.Child(email + "/Library").PostAsync(JsonConvert.SerializeObject(item));
-            if (! String.IsNullOrEmpty(data.Key))
+            try
             {
+                await firebaseClient.Child(email + "/Library/" + item.Content).PutAsync(JsonConvert.SerializeObject(item));
                 return true;
             }
-            else
+            catch
+            {
+                return false;
+
+            }            
+        }
+
+        public async Task<bool> DeleteItem(string id)
+        {
+            string email = Preferences.Get("email", "").Replace(".", "_");
+            try
+            {
+                await firebaseClient.Child(email + "/Library/" + id).DeleteAsync();
+                return true;
+            }
+            catch
             {
                 return false;
             }
@@ -32,7 +47,7 @@ namespace SashimiApp.Repository
 
         public async Task<List<LibraryItem>> GetLibraryItems()
         {
-            string email = Preferences.Get("email", "").Replace(".", "_"); ;
+            string email = Preferences.Get("email", "").Replace(".", "_"); 
             return (await firebaseClient.Child(email + "/Library").OnceAsync<LibraryItem>()).Select(item => new LibraryItem
             {
                 Content = item.Object.Content,
@@ -42,5 +57,12 @@ namespace SashimiApp.Repository
 
             }).ToList();
         }
+
+        //public async Task<LibraryItem> GetById(string id)
+        //{
+        //    string email = Preferences.Get("email", "").Replace(".", "_");
+        //    return (await firebaseClient.Child(nameof(LibraryItem) + "/" + id).OnceSingleAsync<LibraryItem>());
+        //}
+
     }
 }
