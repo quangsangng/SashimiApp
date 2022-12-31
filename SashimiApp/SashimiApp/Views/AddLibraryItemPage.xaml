@@ -1,0 +1,14 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="SashimiApp.Views.AddLibraryItemPage">
+    <ContentPage.Content>
+        <StackLayout>
+            <Entry x:Name="entryContent" Placeholder="Từ vựng"/>
+            <Entry x:Name="entryExplain" Placeholder="Giả nghĩa"/>
+            <Entry x:Name="entryExample_1" Placeholder="Ví dụ"/>
+            <Entry x:Name="entryExample_2" Placeholder="Dịch"/>
+            <Button Clicked="SubmitLibraryItem"/>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

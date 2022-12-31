@@ -5,6 +5,7 @@ using SashimiApp.Models;
 using Xamarin.Forms;
 
 using Xamarin.Forms.Xaml;
+using Xamarin.Essentials;
 
 namespace SashimiApp.Views
 {

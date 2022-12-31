@@ -13,7 +13,6 @@ namespace SashimiApp.Models
             Explain: Giải thích nghĩa của từ đó
             Example: Ví dụ sử dụng từ đó
         */
-        public int ID { get; set; } 
         public string Content { get; set; }
         public string Explain { get; set; }
         public string Example_1 { get; set; }

@@ -22,7 +22,9 @@
                 TextColor="#554d56" 
                 HeightRequest="51" 
                 Margin="16,0,16,0" 
-                Grid.Row="1" />
+                Grid.Row="1" 
+                Text="admin@gmail.com" 
+                />
             <local:CustomEntry 
                 x:Name="entryPassword" 
                 IsPassword="True" 
@@ -32,7 +34,9 @@
                 TextColor="#554d56" 
                 HeightRequest="51" 
                 Margin="16,0,16,0" 
-                Grid.Row="2" />
+                Grid.Row="2" 
+                Text="admin123"
+                />
             <RelativeLayout Padding="16" Grid.Row="3">
                 <CheckBox 
                     Color="Black" 
@@ -57,7 +61,7 @@
             </RelativeLayout>
             <Button 
                 Text="Đăng nhập"
-                Clicked="NavigateToHomePage"
+                Clicked="LoginToSashimi"
                 StyleId="btnLogin" 
                 WidthRequest="50" 
                 HeightRequest="51" 

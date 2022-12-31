@@ -11,21 +11,36 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <None Remove="Assets\Fonts\Font Awesome 6 Free-Regular-400.otf" />
+    <None Remove="Assets\Fonts\FontAwesome6BrandsRegular400.otf" />
+    <None Remove="Assets\Fonts\FontAwesome6FreeRegular400.otf" />
+    <None Remove="Assets\Fonts\FontAwesome6FreeSolid900.otf" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <EmbeddedResource Include="Assets\Fonts\FontAwesome6BrandsRegular400.otf" />
+    <EmbeddedResource Include="Assets\Fonts\FontAwesome6FreeRegular400.otf" />
+    <EmbeddedResource Include="Assets\Fonts\FontAwesome6FreeSolid900.otf" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="FirebaseAuthentication.net" Version="3.7.2" />
+    <PackageReference Include="FirebaseDatabase.net" Version="4.1.0" />
     <PackageReference Include="Xamarin.Forms" Version="5.0.0.2012" />
     <PackageReference Include="Xamarin.Essentials" Version="1.6.1" />
   </ItemGroup>
 
   <ItemGroup>
-    <EmbeddedResource Update="Controls\CardView.xaml">
-      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
-    </EmbeddedResource>
-    <EmbeddedResource Update="Views\Account.xaml">
+    <EmbeddedResource Update="Views\AddLibraryItemPage.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
     <EmbeddedResource Update="Views\LessonDetail.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
     <EmbeddedResource Update="Views\LibraryPage.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Views\MenuPage.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
     <EmbeddedResource Update="Views\PlaygroundPage.xaml">
@@ -40,11 +55,8 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Compile Update="Controls\CardLesson.xaml.cs">
-      <DependentUpon>CardLesson.xaml</DependentUpon>
-    </Compile>
-    <Compile Update="Controls\CardExam.xaml.cs">
-      <DependentUpon>CardExam.xaml</DependentUpon>
+    <Compile Update="Views\AddLibraryItemPage.xaml.cs">
+      <DependentUpon>AddLibraryItemPage.xaml</DependentUpon>
     </Compile>
     <Compile Update="Views\LibraryPage.xaml.cs">
       <DependentUpon>LibraryPage.xaml</DependentUpon>
@@ -54,6 +66,9 @@
     </Compile>
     <Compile Update="Views\HomePage.xaml.cs">
       <DependentUpon>HomePage.xaml</DependentUpon>
+    </Compile>
+    <Compile Update="Views\MenuPage.xaml.cs">
+      <DependentUpon>MenuPage.xaml</DependentUpon>
     </Compile>
   </ItemGroup>
 </Project>
