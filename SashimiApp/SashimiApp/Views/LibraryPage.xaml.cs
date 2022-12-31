@@ -85,7 +85,7 @@ namespace SashimiApp.Views
             await Navigation.PushAsync(new AddLibraryItemPage());
         }
 
-        private async void ReloadLibraryItems(object sender, EventArgs e)
+        private void ReloadLibraryItems(object sender, EventArgs e)
         {
             renderLibraryElements();
         }

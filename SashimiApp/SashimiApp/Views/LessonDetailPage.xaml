@@ -1,0 +1,71 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="SashimiApp.Views.LessonDetailPage"
+             Title="{Binding Name}">
+    <ContentPage.Content>
+        <StackLayout HorizontalOptions="Center" VerticalOptions="CenterAndExpand" Spacing="50">
+            <Label Text=""
+                   HorizontalTextAlignment="Center"
+                   VerticalTextAlignment="Center"
+                   x:Name="labelTopic"
+                   Margin="5,5"
+                   FontSize="18"
+                   />
+            <Label 
+                   x:Name="labelQuestion"
+                   FontSize="30" 
+                   TextColor="Red"
+                   HorizontalTextAlignment="Center"
+                   VerticalTextAlignment="Center"
+                   HeightRequest="100"
+                   
+                   />
+            <Grid  Padding="10,10,10,10">
+                <Grid.RowDefinitions>
+                    <RowDefinition />
+                    <RowDefinition />
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition />
+                    <ColumnDefinition />
+                </Grid.ColumnDefinitions>
+                <Button Text="Ans 1"
+                        x:Name="buttonAnswer1"
+                        Grid.Row="0" 
+                        HeightRequest="120"
+                        CornerRadius="10"
+                        FontSize="20"
+                        Clicked="ChosingAnswer1"
+                 />
+                <Button Text="Ans 2"
+                        x:Name="buttonAnswer2"
+                        Grid.Row="1"
+                        Grid.Column="0"
+                        HeightRequest="120"
+                        CornerRadius="10"
+                        FontSize="20"
+                        Clicked="ChosingAnswer2"
+                 />
+                <Button Text="Ans 3"
+                        x:Name="buttonAnswer3"
+                        Grid.Row="0" 
+                        Grid.Column="1"
+                        HeightRequest="120"
+                        CornerRadius="10"
+                        FontSize="20"
+                        Clicked="ChosingAnswer3"
+                />
+                <Button Text="Ans 4"
+                        x:Name="buttonAnswer4"
+                        Grid.Row="1" 
+                        Grid.Column="1"
+                        HeightRequest="120"
+                        CornerRadius="10"
+                        FontSize="20"
+                        Clicked="ChosingAnswer4"
+                />
+            </Grid>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

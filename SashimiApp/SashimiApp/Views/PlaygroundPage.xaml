@@ -16,9 +16,9 @@
                         <Frame CornerRadius="5"
                                BackgroundColor="{Binding BackgroundColor}"
                                BorderColor="{Binding BorderColor}"
-           HasShadow="True"
-           Padding="8"
-           Margin="20, 7">
+                               HasShadow="True"
+                               Padding="8"
+                               Margin="20, 7">
                             <Grid Padding="10" RowSpacing="10" ColumnSpacing="10" >
                             <Grid.RowDefinitions>
                                 <RowDefinition Height="Auto"/>

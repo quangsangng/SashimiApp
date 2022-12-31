@@ -10,16 +10,16 @@ using Xamarin.Forms.Xaml;
 namespace SashimiApp.Views
 {
     [XamlCompilation(XamlCompilationOptions.Compile)]
-    public partial class Account : ContentPage
+    public partial class AccountPage : ContentPage
     {
-        public Account()
+        public AccountPage()
         {
             InitializeComponent();
         }
         private async void OnItemSelected(Object sender, ItemTappedEventArgs e)
         {
             var mydetails = e.Item as Lesson;
-            await Navigation.PushAsync(new LessonDetail(mydetails.Name));
+            await Navigation.PushAsync(new LessonDetailPage(mydetails.Name));
 
         }
     }

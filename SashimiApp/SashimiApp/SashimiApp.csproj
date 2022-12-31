@@ -34,7 +34,7 @@
     <EmbeddedResource Update="Views\AddLibraryItemPage.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
-    <EmbeddedResource Update="Views\LessonDetail.xaml">
+    <EmbeddedResource Update="Views\LessonDetailPage.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
     <EmbeddedResource Update="Views\LibraryPage.xaml">
@@ -55,8 +55,14 @@
   </ItemGroup>
 
   <ItemGroup>
+    <Compile Update="Views\AccountPage.xaml.cs">
+      <DependentUpon>AccountPage.xaml</DependentUpon>
+    </Compile>
     <Compile Update="Views\AddLibraryItemPage.xaml.cs">
       <DependentUpon>AddLibraryItemPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Update="Views\LessonDetailPage.xaml.cs">
+      <DependentUpon>LessonDetailPage.xaml</DependentUpon>
     </Compile>
     <Compile Update="Views\LibraryPage.xaml.cs">
       <DependentUpon>LibraryPage.xaml</DependentUpon>
