@@ -1,10 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using SashimiApp.Models;
 
 using Xamarin.Forms;
+
 using Xamarin.Forms.Xaml;
 
 namespace SashimiApp.Views
@@ -15,6 +14,13 @@ namespace SashimiApp.Views
         public PlaygroundPage()
         {
             InitializeComponent();
+            BindingContext = new LessonListViewModel();
+        }
+        private async void OnItemSelected(Object sender, ItemTappedEventArgs e)
+        {
+            var mydetails = e.Item as Lesson;
+            await Navigation.PushAsync(new LessonDetail(mydetails.Name));
+
         }
     }
 }

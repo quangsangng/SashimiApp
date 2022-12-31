@@ -14,6 +14,7 @@
                                IconBackgroundColor="SlateGray"
                                IconImageSource="user.png" 
                                    CardColor="White"
+                                   
                                    />
                 <FlexLayout>
                     <controls:CardExam BorderColor="DarkGray"

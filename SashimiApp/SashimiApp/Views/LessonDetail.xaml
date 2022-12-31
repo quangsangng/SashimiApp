@@ -1,0 +1,45 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="SashimiApp.Views.LessonDetail"
+             Title="{Binding Name}">
+    <ContentPage.Content>
+        <StackLayout HorizontalOptions="Center">
+            <Label Text="Cau hoi" FontSize="24" TextColor="Black"
+                   HorizontalTextAlignment="Center" Margin="20"/>
+            <Grid Margin="0, 5">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="auto" />
+                    <RowDefinition />
+                    <RowDefinition Height="auto" />
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition />
+                    <ColumnDefinition />
+                </Grid.ColumnDefinitions>
+                <Button Text="Ans 1"
+                        Grid.Row="2" 
+                        HeightRequest="120"
+                        CornerRadius="10"
+                 />
+                <Button Text="Ans 2"
+                        Grid.Row="3" 
+                        HeightRequest="120"
+                        CornerRadius="10"
+                 />
+                <Button Text="Ans 3"
+                        Grid.Row="2" 
+                        Grid.Column="1"
+                        HeightRequest="120"
+                        CornerRadius="10"
+                />
+                <Button Text="Ans 4"
+                        Grid.Row="3" 
+                        Grid.Column="1"
+                        HeightRequest="120"
+                        CornerRadius="10"
+                />
+            </Grid>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

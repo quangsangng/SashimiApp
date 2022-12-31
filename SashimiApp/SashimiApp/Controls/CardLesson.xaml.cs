@@ -67,5 +67,6 @@ namespace SashimiApp.Controls
             InitializeComponent();
         }
 
+
     }
 }

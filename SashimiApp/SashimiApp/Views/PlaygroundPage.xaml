@@ -2,12 +2,55 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="SashimiApp.Views.PlaygroundPage"
+             xmlns:controls="clr-namespace:SashimiApp.Controls"
              >
     <ContentPage.Content>
-        <StackLayout>
-            <Label Text="Bạn chưa học được từ vựng nào hôm nay"
-                VerticalOptions="CenterAndExpand" 
-                HorizontalOptions="CenterAndExpand" />
-        </StackLayout>
+        <ListView ItemsSource="{Binding LessonList}"
+                   HasUnevenRows="true"
+                   SeparatorVisibility="None"
+                   ItemTapped="OnItemSelected"
+                  >
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <ViewCell >
+                        <Frame CornerRadius="5"
+                               BackgroundColor="{Binding BackgroundColor}"
+                               BorderColor="{Binding BorderColor}"
+           HasShadow="True"
+           Padding="8"
+           Margin="20, 7">
+                            <Grid Padding="10" RowSpacing="10" ColumnSpacing="10" >
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="Auto"/>
+                                <RowDefinition Height="*"/>
+                            </Grid.RowDefinitions>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="Auto"/>
+                                <ColumnDefinition Width="*"/>
+                            </Grid.ColumnDefinitions>
+
+                            <Image
+                                       HeightRequest="60"
+                                        HorizontalOptions="CenterAndExpand"
+                                        VerticalOptions="CenterAndExpand"
+                                        Aspect="AspectFill"
+                                       WidthRequest="66"
+                                       Grid.RowSpan="2"
+                                       Source="{Binding Image}"/>
+                            <Label Grid.Column="1"
+                                   Grid.RowSpan="2"
+                                       Text="{Binding Name}"
+                                   VerticalTextAlignment="Center"
+                                   HorizontalTextAlignment="Center"
+                                   FontSize="22"
+                                   FontAttributes="Bold"
+                                   TextColor="#723232"/>
+                        </Grid>
+                        </Frame>
+                    </ViewCell>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
+
     </ContentPage.Content>
 </ContentPage>
