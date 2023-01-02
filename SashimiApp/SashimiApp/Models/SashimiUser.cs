@@ -16,5 +16,12 @@ namespace SashimiApp.Models
         public string Email { get; set; }
         public string Birth { get; set; }
 
+        // Task 1 là phần nghĩa của từ
+        public int Task1_correct { get; set; }
+        public int Task1_total { get; set; }
+
+        // Task 2 là phần điền vào chỗ trống
+        public int Task2_correct { get; set; }
+        public int Task2_total { get; set; }
     }
 }

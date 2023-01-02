@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using Firebase.Auth;
@@ -25,13 +26,13 @@ namespace SashimiApp.Repository
 
         public async Task<bool> SaveUserInfor(SashimiUser user)
         {
-            string clean_email = user.Email.Replace('.', '_'); // sang@gmail.com -> sang@gmail_com
-            var data = await firebaseClient.Child(clean_email + "/UserInfo").PostAsync(JsonConvert.SerializeObject(user));
-            if (!String.IsNullOrEmpty(data.Key))
+            string email = user.Email.Replace(".", "_");
+            try
             {
+                await firebaseClient.Child(email + "/UserInfo/data").PutAsync(JsonConvert.SerializeObject(user));
                 return true;
             }
-            else
+            catch
             {
                 return false;
             }
@@ -48,6 +49,15 @@ namespace SashimiApp.Repository
             user.Email = email;
             user.Name = name;
             user.Birth = birth;
+            
+
+            // Reset những chỉ số của task 1 và task 2 khi vừa đăng kí tài khoản
+            user.Task1_correct = 0;
+            user.Task1_total = 0;
+            user.Task2_correct = 0;
+            user.Task2_total = 0;
+
+
 
             var token = await authProvider.CreateUserWithEmailAndPasswordAsync(email, password, name);
             if (!String.IsNullOrEmpty(token.FirebaseToken))
@@ -68,6 +78,21 @@ namespace SashimiApp.Repository
                 
             }
             return "";
+        }
+
+        public async Task<List<SashimiUser>> GetAllUserInfo()
+        {
+            string email = Preferences.Get("email", "").Replace(".", "_");
+            return (await firebaseClient.Child(email + "/UserInfo").OnceAsync<SashimiUser>()).Select(item => new SashimiUser
+            {
+                    Name = item.Object.Name,
+                    Birth = item.Object.Birth,
+                    Email = item.Object.Email,
+                    Task1_correct = item.Object.Task1_correct,
+                    Task2_correct = item.Object.Task2_correct,
+                    Task1_total = item.Object.Task1_total,
+                    Task2_total = item.Object.Task2_total
+                }).ToList();
         }
 
     }

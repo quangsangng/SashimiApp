@@ -6,7 +6,7 @@ using System.Text;
 using System.Threading.Tasks;
 using Xamarin.Forms;
 using SashimiApp.Repository;
-
+using Xamarin.Essentials;
 
 namespace SashimiApp.Views
 {

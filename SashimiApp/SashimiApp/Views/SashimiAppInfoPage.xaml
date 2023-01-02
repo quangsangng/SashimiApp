@@ -1,0 +1,23 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="SashimiApp.Views.SashimiAppInfoPage">
+    <ContentPage.Content>
+        <StackLayout Padding="20,20,20,20">
+            <Label 
+                Text="Đồ án môn học IE307.N13.CNCL"
+                HorizontalOptions="Center" 
+                TextColor="#000"
+                FontSize="20"
+                />
+            <Label 
+                Text="Ứng dụng học tiếng Nhật Sashimi!" 
+                VerticalTextAlignment="Center"
+                TextColor="#F41968"
+                FontSize="24"
+                />
+            <Label Text="Nguyễn Quang Sang - 19522122" HorizontalOptions="Center"/>
+            <Label Text="Nguyễn Viết Sơn - 19522140" HorizontalOptions="Center"/>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

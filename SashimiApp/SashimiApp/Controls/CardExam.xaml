@@ -11,8 +11,8 @@
            BorderColor="{Binding BorderColor}"
            CornerRadius="5"
            HasShadow="True"
-           Padding="8"
-           Margin="15, 0, 0, 0"
+           Padding="16"
+           Margin="5, 0, 0, 0"
            >
         <Grid>
             <Grid.RowDefinitions>
@@ -21,22 +21,22 @@
                 <RowDefinition Height="Auto" />
             </Grid.RowDefinitions>
             <Grid.ColumnDefinitions>
-                <ColumnDefinition Width="75" />
-                <ColumnDefinition Width="85" />
+                <ColumnDefinition Width="105" />
+                <ColumnDefinition Width="55" />
             </Grid.ColumnDefinitions>
             <Frame IsClippedToBounds="True"
                    CornerRadius="15"
                    HeightRequest="25"
-                   WidthRequest="55"
+                   WidthRequest="85"
                    >
-                <Label Text="{Binding CardTitle, FallbackValue='Points'}" VerticalTextAlignment="Center"
+                <Label Text="{Binding CardTitle, FallbackValue='%'}" VerticalTextAlignment="Center"
                    HorizontalTextAlignment="Center" FontSize="22"></Label>
             </Frame>
             <Label Grid.Column="1"
-                   Text="points"
+                   Text="%"
                    TextColor="White"
                    FontAttributes="Bold"
-                   FontSize="20"
+                   FontSize="18"
                    VerticalTextAlignment="Center"
                    HorizontalTextAlignment="Start" />
             <Label Grid.Row="2"
@@ -47,7 +47,7 @@
                    HorizontalOptions="Fill" 
                    FontSize="18"
                    TextColor="White"/>
-            <Label Grid.Row="3"
+            <!--<Label Grid.Row="3"
                     Grid.ColumnSpan="1"
                    Text="Thời gian: "
                    VerticalTextAlignment="Start"
@@ -58,7 +58,7 @@
                    Text="{Binding CardTiming, FallbackValue='Level'}"
                    VerticalTextAlignment="Start"
                    VerticalOptions="Fill"
-                   HorizontalOptions="Fill" TextColor="White"/>
+                   HorizontalOptions="Fill" TextColor="White"/>-->
 
         </Grid>
     </Frame>

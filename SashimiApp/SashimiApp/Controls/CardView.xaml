@@ -58,7 +58,7 @@
                    VerticalTextAlignment="Start"
                    VerticalOptions="Fill"
                    HorizontalOptions="Fill" />
-            <Label Grid.Row="3"
+            <!--<Label Grid.Row="3"
                    Grid.ColumnSpan="1"
                    Text="Trình độ: "
                    VerticalTextAlignment="Start"
@@ -69,7 +69,7 @@
                    Text="{Binding CardLevel, FallbackValue='Level'}"
                    VerticalTextAlignment="Start"
                    VerticalOptions="Fill"
-                   HorizontalOptions="Fill" />
+                   HorizontalOptions="Fill" />-->
 
         </Grid>
     </Frame>

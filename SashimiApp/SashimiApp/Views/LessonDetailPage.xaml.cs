@@ -15,6 +15,8 @@ namespace SashimiApp.Views
     public partial class LessonDetailPage : ContentPage
     {
         LibraryItemRepository libraryItemRepository = new LibraryItemRepository();
+        QuizRepository quizRepository = new QuizRepository();
+
         public List<LibraryItem> Items;
 
         // Lưu true_index; ở ngoài xác định câu hỏi đúng
@@ -86,7 +88,11 @@ namespace SashimiApp.Views
             {
                 // Nếu trả lời đúng có thể lựa chọn tiếp tục và dừng lại
                 bool next = await DisplayAlert("Thông báo", "Đáp án chính xác", "Tiếp tục", "Đóng");
-                if (next) RandomRenderQuestionAnswer(type_of_lesson);
+                if (next) 
+                {
+                    await quizRepository.TrueAnswers(type_of_lesson);
+                    RandomRenderQuestionAnswer(type_of_lesson);
+                }
             }
             else
             {

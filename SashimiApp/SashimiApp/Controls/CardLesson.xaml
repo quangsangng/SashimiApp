@@ -42,17 +42,17 @@
                    FontAttributes="Bold"
                    FontSize="Large"
                    VerticalTextAlignment="Center"
-                   HorizontalTextAlignment="Start" />
-            <Label Grid.Row="2"
-                   Grid.Column="1"
-                   Text="{Binding CardDescription, FallbackValue='Card description text.'}"
-                   VerticalTextAlignment="Start"
-                   VerticalOptions="Fill"
-                   HorizontalOptions="Fill" 
-                   FontSize="18"
-                  />
+                   HorizontalTextAlignment="End" />
+                <Label Grid.Row="2"
+                       Grid.Column="1"
+                       Text="{Binding CardDescription, FallbackValue='Card description text.'}"
+                       HorizontalTextAlignment="End"
+                       VerticalOptions="Fill"
+                       HorizontalOptions="Fill" 
+                       FontSize="18"
+                      />
             </Grid>
-            <Frame 
+            <!--<Frame 
                    BackgroundColor="{Binding IconBackgroundColor, FallbackValue='Blue'}"
                    BorderColor="{Binding BorderColor, FallbackValue='Black'}"
                    CornerRadius="50"
@@ -65,7 +65,7 @@
                 <Label Text="{Binding CardProcess, FallbackValue='Process'}" 
                        VerticalTextAlignment="Center"
                    HorizontalTextAlignment="Center" FontSize="15" TextColor="{Binding TextColor, FallbackValue='Black'}"></Label>
-            </Frame>
+            </Frame>-->
 
         </FlexLayout>
     </Frame>

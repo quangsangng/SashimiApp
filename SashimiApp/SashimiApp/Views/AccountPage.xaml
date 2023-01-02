@@ -8,27 +8,27 @@
         <ScrollView >
             <StackLayout>
                 <controls:CardView 
+                               x:Name="UserInfoCard"
                                BorderColor="#F41968"
-                               CardTitle="Nguyen Quang Sang"
+                               CardTitle="Chưa có"
                                CardDescription="nguyenquangsang@example.com"
-                               CardLevel ="N3"
                                IconBackgroundColor="SlateGray"
                                IconImageSource="user.png" 
-                                   CardColor="White"
+                               CardColor="White"
                                    />
                 <FlexLayout>
                     <controls:CardExam 
+                               x:Name="CardExamTask1"
                                BorderColor="DarkGray"
                                CardTitle="20"
-                               CardDescription="Trắc nghiệm"
-                               CardTiming ="23m"
+                               CardDescription="Nghĩa của từ"
                                CardColor="#ed7483"
                                    />
                     <controls:CardExam 
+                               x:Name="CardExamTask2"
                                BorderColor="DarkGray"
                                CardTitle="15"
                                CardDescription="Điền vào chỗ trống"
-                               CardTiming="15m"
                                CardColor="#3a80f3"
                               />
                 </FlexLayout>
@@ -43,19 +43,21 @@
                 </FlexLayout>
 
                 <controls:CardLesson 
+                                     x:Name="SoTuVungCard"
                                      IconBackgroundColor="Transparent"
                                      IconImageSource="books.png"
                                      BorderColor="#3a80f3"
                                      TextColor="#3a80f3"
-                                     CardTitle="Từ vựng"
+                                     CardTitle="Sổ từ vựng"
                                      CardDescription="89 từ đã học"
-                                     CardProcess ="50%"
+                                     CardProcess ="50"
                                      CardColor="#e7f4fb"
                  />
-                <controls:CardLesson 
+                <controls:CardLesson
+                                    x:Name="SoCauDungCard"
                                     IconBackgroundColor="Transparent"
                                     IconImageSource="light.png"
-                                    CardTitle="Hán tự"
+                                    CardTitle="Số câu trả lời đúng"
                                     BorderColor="#ec7482"
                                     TextColor ="#ec7482"
                                     CardDescription="69 từ đã học"

@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
+using Xamarin.Essentials;
 
 namespace SashimiApp.Views
 {
@@ -16,9 +17,15 @@ namespace SashimiApp.Views
         {
             InitializeComponent();
         }
-        private async void NavigateToLoginPage(object sender, EventArgs e)
+        private async void NavigateToSashimiInfoPage(object sender, EventArgs e)
+        {
+            await Navigation.PushAsync(new SashimiAppInfoPage());
+        }
+
+            private async void NavigateToLoginPage(object sender, EventArgs e)
         {
             await Navigation.PushAsync(new LoginPage());
+            Preferences.Set("email", "");
         }
 
     }
