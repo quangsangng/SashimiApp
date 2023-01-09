@@ -2,6 +2,7 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="SashimiApp.Views.AddLibraryItemPage">
+    
     <ContentPage.Content>
         <StackLayout>
             <Entry x:Name="entryContent" Placeholder="Từ vựng"/>
@@ -11,4 +12,5 @@
             <Button Clicked="SubmitLibraryItem" Text="Lưu"/>
         </StackLayout>
     </ContentPage.Content>
+    
 </ContentPage>

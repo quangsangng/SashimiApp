@@ -117,5 +117,14 @@ namespace SashimiApp.Views
             }
             
         }
+        private async void ViewAllLibraryItem(object sender, EventArgs e)
+        {
+            listOfLibrary.ItemsSource = Items;
+
+        }
+        private async void ViewForgotLibraryItem(object sender, EventArgs e)
+        {
+            listOfLibrary.ItemsSource = Items.Where(item => item.Status == false);
+        }
     }
 }

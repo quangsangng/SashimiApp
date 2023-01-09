@@ -14,10 +14,12 @@
            Padding="8"
            VerticalOptions="Center"
            HorizontalOptions="Center"
-           Margin="20">
-        <Grid>
+           Margin="0,40,0,0"
+           >
+        <Grid >
             <Grid.RowDefinitions>
-                <RowDefinition Height="75" />
+                <RowDefinition Height="30" />
+                <RowDefinition Height="30" />
                 <RowDefinition Height="4" />
                 <RowDefinition Height="Auto" />
             </Grid.RowDefinitions>
@@ -26,6 +28,7 @@
                 <ColumnDefinition Width="200" />
             </Grid.ColumnDefinitions>
             <Frame IsClippedToBounds="True"
+                   Grid.RowSpan="3"
                    BorderColor="{Binding BorderColor, FallbackValue='Black'}"
                    BackgroundColor="{Binding IconBackgroundColor, FallbackValue='Blue'}"
                    CornerRadius="38"
@@ -42,22 +45,26 @@
                        Aspect="AspectFill" />
             </Frame>
             <Label Grid.Column="1"
+                   Grid.Row="0"
+                   Margin="20,0,0,0"
                    Text="{Binding CardTitle, FallbackValue='Card Title'}"
                    FontAttributes="Bold"
-                   FontSize="Large"
+                   FontSize="Medium"
                    VerticalTextAlignment="Center"
                    HorizontalTextAlignment="Start" />
-            <BoxView Grid.Row="1"
-                     Grid.ColumnSpan="2"
-                     BackgroundColor="{Binding BorderColor, FallbackValue='Black'}"
-                     HeightRequest="2"
-                     HorizontalOptions="Fill" />
-            <Label Grid.Row="2"
-                   Grid.ColumnSpan="2"
+
+            <Label Grid.Row="1"
+                   Grid.Column="1"
+                   Margin="20,0,0,0"
                    Text="{Binding CardDescription, FallbackValue='Card description text.'}"
-                   VerticalTextAlignment="Start"
-                   VerticalOptions="Fill"
-                   HorizontalOptions="Fill" />
+                   VerticalTextAlignment="Center"
+                   HorizontalTextAlignment="Start"
+                   />
+            
+            <Button Grid.Row="3"
+                    Grid.ColumnSpan="2"
+                    Text="Chỉnh sửa"
+                    Clicked="NavigateToEditUserInfo"/>
             <!--<Label Grid.Row="3"
                    Grid.ColumnSpan="1"
                    Text="Trình độ: "

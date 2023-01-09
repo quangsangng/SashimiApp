@@ -1,6 +1,9 @@
 ﻿using System;
 using System.ComponentModel;
 using Xamarin.Forms;
+using SashimiApp.Views;
+using Xamarin.Essentials;
+using System.Linq;
 
 namespace SashimiApp.Controls
 {
@@ -61,5 +64,9 @@ namespace SashimiApp.Controls
             InitializeComponent();
         }
 
+        private async void NavigateToEditUserInfo(object sender, EventArgs e)
+        {
+            await Navigation.PushAsync(new EditUserInfo());
+        }
     }
 }

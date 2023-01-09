@@ -79,17 +79,26 @@ namespace SashimiApp.Views
 
         private async void CheckAnswer(string choice_text)
         {
-            if (
-                    Items[true_index].Content == choice_text && type_of_lesson == "Điền vào chỗ trống"
-                    ||
-                    Items[true_index].Explain == choice_text && type_of_lesson == "Nghĩa của từ"
-               )
-
+            if (Items[true_index].Content == choice_text && type_of_lesson == "Điền vào chỗ trống")
             {
                 // Nếu trả lời đúng có thể lựa chọn tiếp tục và dừng lại
                 bool next = await DisplayAlert("Thông báo", "Đáp án chính xác", "Tiếp tục", "Đóng");
                 if (next) 
                 {
+                    Items[true_index].Status = true;
+                    await libraryItemRepository.SaveItem(Items[true_index]);
+                    await quizRepository.TrueAnswers(type_of_lesson);
+                    RandomRenderQuestionAnswer(type_of_lesson);
+                }
+            }
+            else if ( Items[true_index].Explain == choice_text && type_of_lesson == "Nghĩa của từ" )
+            {
+                // Nếu trả lời đúng có thể lựa chọn tiếp tục và dừng lại
+                bool next = await DisplayAlert("Thông báo", "Đáp án chính xác", "Tiếp tục", "Đóng");
+                if (next)
+                {
+                    Items[true_index].Status = true;
+                    await libraryItemRepository.SaveItem(Items[true_index]);
                     await quizRepository.TrueAnswers(type_of_lesson);
                     RandomRenderQuestionAnswer(type_of_lesson);
                 }
@@ -97,6 +106,8 @@ namespace SashimiApp.Views
             else
             {
                 // Lựa chọn sai thì tự động next qua câu mới
+                Items[true_index].Status = false;
+                await libraryItemRepository.SaveItem(Items[true_index]);
                 await DisplayAlert("Thông báo", "Đáp án sai", "Tiếp tục");
                 RandomRenderQuestionAnswer(type_of_lesson);
             }

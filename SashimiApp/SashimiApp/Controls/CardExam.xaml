@@ -12,54 +12,23 @@
            CornerRadius="5"
            HasShadow="True"
            Padding="16"
-           Margin="5, 0, 0, 0"
+           Margin="10, 0, 10, 0"
            >
-        <Grid>
-            <Grid.RowDefinitions>
-                <RowDefinition Height="75" />
-                <RowDefinition Height="4" />
-                <RowDefinition Height="Auto" />
-            </Grid.RowDefinitions>
-            <Grid.ColumnDefinitions>
-                <ColumnDefinition Width="105" />
-                <ColumnDefinition Width="55" />
-            </Grid.ColumnDefinitions>
-            <Frame IsClippedToBounds="True"
-                   CornerRadius="15"
-                   HeightRequest="25"
-                   WidthRequest="85"
-                   >
-                <Label Text="{Binding CardTitle, FallbackValue='%'}" VerticalTextAlignment="Center"
-                   HorizontalTextAlignment="Center" FontSize="22"></Label>
-            </Frame>
-            <Label Grid.Column="1"
-                   Text="%"
-                   TextColor="White"
-                   FontAttributes="Bold"
-                   FontSize="18"
+
+
+        <FlexLayout AlignItems="Center" JustifyContent="SpaceBetween" Padding="8" Direction="Column">
+            <Label Text="{Binding CardTitle, FallbackValue='%'}" 
                    VerticalTextAlignment="Center"
-                   HorizontalTextAlignment="Start" />
-            <Label Grid.Row="2"
-                   Grid.ColumnSpan="2"
-                   Text="{Binding CardDescription, FallbackValue='Card description text.'}"
-                   VerticalTextAlignment="Start"
+                   HorizontalTextAlignment="Center" 
+                   FontSize="22"
+                   FontAttributes="Bold"/>
+            
+            <Label Text="{Binding CardDescription, FallbackValue='Card description text.'}"
+                   VerticalTextAlignment="Center"
                    VerticalOptions="Fill"
                    HorizontalOptions="Fill" 
-                   FontSize="18"
-                   TextColor="White"/>
-            <!--<Label Grid.Row="3"
-                    Grid.ColumnSpan="1"
-                   Text="Thời gian: "
-                   VerticalTextAlignment="Start"
-                   VerticalOptions="Fill"
-                   HorizontalOptions="Fill" TextColor="White"/>
-            <Label Grid.Row="3"
-                   Grid.Column="1"
-                   Text="{Binding CardTiming, FallbackValue='Level'}"
-                   VerticalTextAlignment="Start"
-                   VerticalOptions="Fill"
-                   HorizontalOptions="Fill" TextColor="White"/>-->
-
-        </Grid>
+                   FontSize="14"
+                   TextColor="#000"/>
+        </FlexLayout>
     </Frame>
 </ContentView>

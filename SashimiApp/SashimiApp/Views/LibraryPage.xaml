@@ -15,14 +15,18 @@
                     <ColumnDefinition Width="*"/>
                     <ColumnDefinition Width="*"/>
                 </Grid.ColumnDefinitions>
-                <Button 
-                    Text="Đã thuộc"
-                    BackgroundColor="#ADE792"
+                <Button
+                    Clicked="ViewAllLibraryItem"
+                    x:Name="ViewAllBtn"
+                    Text="Tất cả"
+                    BackgroundColor="#82AAE3"
                     FontSize="10"
                     Grid.Column="0"
                     Grid.Row="0"
                     />
                 <Button 
+                    Clicked="ViewForgotLibraryItem"
+                    x:Name="ViewForgotBtn"
                     Text="Chưa thuộc"
                     BackgroundColor="#FF8787"
                     FontSize="10"

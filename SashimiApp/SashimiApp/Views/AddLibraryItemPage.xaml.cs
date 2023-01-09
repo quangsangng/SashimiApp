@@ -46,11 +46,14 @@ namespace SashimiApp.Views
             item.Explain = explain;
             item.Example_1 = example_1;
             item.Example_2 = example_2;
+            item.Status = false;
+
 
             bool isSave = await libraryItemRepository.SaveItem(item);
             if (isSave)
             {
                 await DisplayAlert("Thông báo", "Lưu thành công", "Đóng");
+                await Navigation.PopAsync();
             }
             else
             {

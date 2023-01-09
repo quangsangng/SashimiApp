@@ -1,0 +1,13 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="SashimiApp.Views.EditUserInfo"
+             Title="Chỉnh sửa thông tin">
+    <ContentPage.Content>
+        <StackLayout>
+            <Entry x:Name="entryName" Placeholder="Tên người dùng"/>
+            <Entry x:Name="entryAvatar" Placeholder="Avatar"/>
+            <Button Clicked="SubmitUserInfo" Text="Lưu"/>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

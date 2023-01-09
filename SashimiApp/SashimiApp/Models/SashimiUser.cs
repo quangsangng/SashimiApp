@@ -13,6 +13,7 @@ namespace SashimiApp.Models
         Birth: Ví dụ sử dụng từ đó
         */
         public string Name { get; set; }
+        public string Avatar { get; set; }
         public string Email { get; set; }
         public string Birth { get; set; }
 

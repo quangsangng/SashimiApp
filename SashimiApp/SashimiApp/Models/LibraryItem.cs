@@ -17,5 +17,7 @@ namespace SashimiApp.Models
         public string Explain { get; set; }
         public string Example_1 { get; set; }
         public string Example_2 { get; set; }
+
+        public bool Status { get; set; }
     }
 }

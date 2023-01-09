@@ -24,9 +24,8 @@ namespace SashimiApp.Views
         {
             InitializeComponent();
             GenerateUserInfo();
-
         }
-        private async void GenerateUserInfo()
+        public async void GenerateUserInfo()
         {
             List<SashimiUser> Users = await userRepository.GetAllUserInfo();
             UserInfoCard.CardTitle = Users[0].Name;
@@ -35,7 +34,7 @@ namespace SashimiApp.Views
             try
             {
                 double task1_percent = (float)Users[0].Task1_correct / (float)Users[0].Task1_total * 100;
-                CardExamTask1.CardTitle = Math.Round(task1_percent,1).ToString();
+                CardExamTask1.CardTitle = Math.Round(task1_percent,1).ToString() + "%";
             }
             catch
             {
@@ -44,7 +43,7 @@ namespace SashimiApp.Views
             try
             {
                 double task2_percent = (float)Users[0].Task2_correct /  (float)Users[0].Task2_total  * 100;
-                CardExamTask2.CardTitle = Math.Round(task2_percent,1).ToString();
+                CardExamTask2.CardTitle = Math.Round(task2_percent,1).ToString() + "%";
             }
             catch
             {
@@ -71,6 +70,16 @@ namespace SashimiApp.Views
             catch
             {
                 SoCauDungCard.CardDescription = "Chưa có thông tin";
+            }
+
+            string avt = userRepository.NormalizeImageUrl(Users[0].Avatar);
+            try
+            {
+                UserInfoCard.IconImageSource = ImageSource.FromUri(new Uri(avt));
+            }
+            catch
+            {
+                return;
             }
 
         }

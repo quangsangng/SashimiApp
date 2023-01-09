@@ -53,7 +53,8 @@ namespace SashimiApp.Repository
                 Content = item.Object.Content,
                 Explain = item.Object.Explain,
                 Example_1 = item.Object.Example_1,
-                Example_2 = item.Object.Example_2
+                Example_2 = item.Object.Example_2,
+                Status = item.Object.Status
 
             }).ToList();
         }

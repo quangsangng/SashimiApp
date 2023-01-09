@@ -9,37 +9,42 @@
             <StackLayout>
                 <controls:CardView 
                                x:Name="UserInfoCard"
-                               BorderColor="#F41968"
+                               
+                               BorderColor="#3a80f3"
                                CardTitle="Chưa có"
                                CardDescription="nguyenquangsang@example.com"
                                IconBackgroundColor="SlateGray"
                                IconImageSource="user.png" 
                                CardColor="White"
                                    />
+
+                <FlexLayout 
+                    Direction="Row"
+                    AlignItems="Start"
+                    JustifyContent="SpaceBetween" 
+                    Margin="22, 28, 22, 10">
+                    <Label Text="Đánh giá" TextColor="Black" FontSize="16"></Label>
+                </FlexLayout>
                 <FlexLayout>
                     <controls:CardExam 
                                x:Name="CardExamTask1"
-                               BorderColor="DarkGray"
-                               CardTitle="20"
+                               BorderColor="#3a80f3"
                                CardDescription="Nghĩa của từ"
-                               CardColor="#ed7483"
+                               CardColor="#e7f4fb"
                                    />
                     <controls:CardExam 
                                x:Name="CardExamTask2"
-                               BorderColor="DarkGray"
-                               CardTitle="15"
+                               BorderColor="#3a80f3"
                                CardDescription="Điền vào chỗ trống"
-                               CardColor="#3a80f3"
+                               CardColor="#e7f4fb"
                               />
                 </FlexLayout>
                 <FlexLayout 
                     Direction="Row"
-                    AlignItems="Center"
+                    AlignItems="Start"
                     JustifyContent="SpaceBetween" 
-                    Margin="22, 28, 22, 10"
-                      >
-                    <Label Text="Bài học" TextColor="Black" FontSize="16"></Label>
-                    <Label Text="Xem thêm" TextColor="#518ef4" FontSize="16"></Label>
+                    Margin="22, 28, 22, 10">
+                    <Label Text="Thông tin khác" TextColor="Black" FontSize="16"></Label>
                 </FlexLayout>
 
                 <controls:CardLesson 
@@ -58,11 +63,11 @@
                                     IconBackgroundColor="Transparent"
                                     IconImageSource="light.png"
                                     CardTitle="Số câu trả lời đúng"
-                                    BorderColor="#ec7482"
-                                    TextColor ="#ec7482"
+                                    BorderColor="#3a80f3"
+                                    TextColor ="#3a80f3"
                                     CardDescription="69 từ đã học"
                                     CardProcess ="45%"
-                                    CardColor="#fdf1f2"
+                                    CardColor="#e7f4fb"
                  />
             </StackLayout>
         </ScrollView>

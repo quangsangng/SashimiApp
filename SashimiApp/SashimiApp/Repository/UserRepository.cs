@@ -49,6 +49,7 @@ namespace SashimiApp.Repository
             user.Email = email;
             user.Name = name;
             user.Birth = birth;
+            user.Avatar = "user_png";
             
 
             // Reset những chỉ số của task 1 và task 2 khi vừa đăng kí tài khoản
@@ -80,6 +81,18 @@ namespace SashimiApp.Repository
             return "";
         }
 
+        public string CleanImageUrl(string url)
+        {
+            url = url.Replace('.', '_').Replace("/", "<88>").Replace("#", "<99>");
+            return url;
+        }
+
+        public string NormalizeImageUrl(string url)
+        {
+            url = url.Replace('_', '.').Replace("<88>", "/").Replace("<99>", "#");
+            return url;
+        }
+
         public async Task<List<SashimiUser>> GetAllUserInfo()
         {
             string email = Preferences.Get("email", "").Replace(".", "_");
@@ -88,6 +101,7 @@ namespace SashimiApp.Repository
                     Name = item.Object.Name,
                     Birth = item.Object.Birth,
                     Email = item.Object.Email,
+                    Avatar = item.Object.Avatar,
                     Task1_correct = item.Object.Task1_correct,
                     Task2_correct = item.Object.Task2_correct,
                     Task1_total = item.Object.Task1_total,
